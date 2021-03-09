@@ -1,0 +1,11 @@
+<body>
+    <ul class="items">
+        <li *ngFor="let item of items" >
+            
+            <a routerLink="/detail/{{item.id}}">
+                <span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
+            </a>
+            
+        </li>
+    </ul>
+</body>
