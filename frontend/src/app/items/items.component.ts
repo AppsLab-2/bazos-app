@@ -1,3 +1,4 @@
+import { ItemService } from './../item.service';
 import { AppComponent } from './../app.component';
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
@@ -11,10 +12,21 @@ import { ITEMS } from '../mock-items';
 })
 export class ItemsComponent implements OnInit {
 
-  items = ITEMS
+  items: Item[] = [];
+  selectedItem?: Item;
 
-  constructor() { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+  this.getItems();
+  }
+
+  getItems(): void{
+    this.itemService.getItems()
+      .subscribe(items => this.items = items);
+  }
+
+  onSelect(item: Item): void {
+    this.selectedItem = item;
   }
 }
