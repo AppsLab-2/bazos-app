@@ -1,19 +1,24 @@
 package com.appslab.bazosapp.models;
 
 import javax.persistence.*;
-import java.util.Set;
+
+
 
 
 @Entity
+@Table(name ="Items")
 public class Items {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     long numberOfItem;
     String category;
     float price;
     String description;
+
     @ManyToOne
-    Set<Users>users;
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users users;
 
     public Items(long numberOfItem,String category, float price, String description){
     this.category=category;
@@ -54,11 +59,11 @@ public class Items {
         this.description = description;
     }
 
-    public Set<Users> getUsers() {
+    public Users  getUsers() {
         return users;
     }
 
-    public void setUsers(Set<Users> users) {
+    public void setUsers(Users users) {
         this.users = users;
     }
 }
