@@ -14,4 +14,9 @@ export class ItemService {
     const items = of(ITEMS);
     return items;
   }
+
+  getItem(id: number): Observable<Item> {
+    return of(ITEMS.find(item => item.id === id)!);
+  }
+
 }
