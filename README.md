@@ -1,12 +1,12 @@
 # bazos-app
 
-Stránka na štýl bazošu, kde ľudia budú môcť pridávať rôzne inzeráty a priraďovať ich do jednotlivých kategórii.
+Stránka na štýl bazošu, letgo ... kde ľudia budú môcť pridávať rôzne inzeráty a priraďovať ich do jednotlivých kategórii.
 
 Must have: pridanie inzeratu, odstránenie inzerátu, kategorie, popis, nazov, fotka, cena, adresa, login
 
-Nice to have: shorting, vyhladavanie, tagy...
+Nice to have: sorting, vyhladavanie, tagy...
 
-Alternatívne názvy: Trading center, CentreTrade, Trade&Sell, Sell&Trade, ExchangeCentre, MRMBuy, MRSell, RMtrade, Trade.co
+Názov: trade.co
 
 tieto návrhy ešte nie sú finálne, chvíľu ešte potrvá, kým to bude úžasné tak ako si predstavujeme :)
 
