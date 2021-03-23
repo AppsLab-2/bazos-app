@@ -1,8 +1,7 @@
-<body>
-  <div *ngIf="item">
+<app-navigation></app-navigation>
+<div *ngIf="item">
       <div class="name">{{item.name}}</div>
       <div class="description">{{item.description}}</div>
       <div class="price">{{item.price}}</div>
-  </div>
-</body>
+</div>
 <button (click)="goBack()">go back</button>
