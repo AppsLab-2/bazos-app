@@ -11,7 +11,7 @@ import { ITEMS } from '../mock-items';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-
+  title = 'trade.co';
   items: Item[] = [];
   selectedItem?: Item;
 
