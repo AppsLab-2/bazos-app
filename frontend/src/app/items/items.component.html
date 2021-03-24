@@ -1,12 +1,11 @@
-<body>
-    <ul class="items">
-        <li *ngFor="let item of items" >
-            
-            <a routerLink="/detail/{{item.id}}">
-                <span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
-            </a>
-            
-        </li>
-    </ul>
-</body>
-<app-item-detail [item]="selectedItem"></app-item-detail>
+<div class="title">
+    <h1>{{title}}</h1>
+</div>    
+<app-navigation></app-navigation>
+<ul class="items">
+    <li *ngFor="let item of items" >
+        <a routerLink="/detail/{{item.id}}">
+            <span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
+        </a>   
+    </li>
+</ul>

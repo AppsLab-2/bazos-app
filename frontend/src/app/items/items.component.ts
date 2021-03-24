@@ -3,7 +3,7 @@ import { AppComponent } from './../app.component';
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Item } from './item'
-import { ITEMS } from '../mock-items';
+
 
 @Component({
   selector: 'app-items',
@@ -11,9 +11,8 @@ import { ITEMS } from '../mock-items';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-
+  title = 'trade.co';
   items: Item[] = [];
-  selectedItem?: Item;
 
   constructor(private itemService: ItemService) { }
 
@@ -24,9 +23,5 @@ export class ItemsComponent implements OnInit {
   getItems(): void{
     this.itemService.getItems()
       .subscribe(items => this.items = items);
-  }
-
-  onSelect(item: Item): void {
-    this.selectedItem = item;
   }
 }
