@@ -26,7 +26,7 @@ public class itemController {
         return service.roster();
     }
     @GetMapping("/detailitem/{id}")
-    public Optional <Items> detailItems(@RequestParam long id){
+    public Optional <Items> detailItems(@PathVariable long id){
         return service.detail(id);
     }
 }
