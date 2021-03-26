@@ -1,5 +1,7 @@
 package com.appslab.bazosapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -17,6 +19,7 @@ public class Items {
     float price;
     String description;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;

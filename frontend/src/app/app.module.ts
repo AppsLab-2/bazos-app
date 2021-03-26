@@ -26,8 +26,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }),
   ],
   providers: [],
   bootstrap: [AppComponent]

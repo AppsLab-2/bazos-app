@@ -13,7 +13,7 @@ public class itemServiceImpl implements itemService{
 
     public itemServiceImpl(itemRepository rep) {
 
-        this.repo = repo;
+        this.repo = rep;
     }
 
     @Override

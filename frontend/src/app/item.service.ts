@@ -17,8 +17,8 @@ export class ItemService {
     const url = `${this.itemsUrl}/${id}`;
     return this.http.get<Item>(url)
   }
-  
+
   getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(this.itemsUrl)
+    return this.http.get<Item[]>('http://localhost:8080/showitems')
   }
 }
