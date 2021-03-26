@@ -14,7 +14,7 @@ export class ItemService {
   constructor(private http: HttpClient) { }
 
   getItem(id: number): Observable<Item> {
-    const url = `${this.itemsUrl}/${id}`;
+    const url = `http://localhost:8080/detailitem/${id}`;
     return this.http.get<Item>(url)
   }
 
