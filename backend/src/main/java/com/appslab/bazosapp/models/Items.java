@@ -10,8 +10,9 @@ import javax.persistence.*;
 public class Items {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    long numberOfItem;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long id;
+    String name;
     String category;
     float price;
     String description;
@@ -20,19 +21,30 @@ public class Items {
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
-    public Items(long numberOfItem,String category, float price, String description){
-    this.category=category;
-    this.price=price;
-    this.description=description;
-    this.numberOfItem=numberOfItem;
+    public Items(long id, String name, String category, float price, String description) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.description = description;
+    }
+    public  Items(){
+
+    }
+    public long getId() {
+        return id;
     }
 
-    public long getNumberOfItem() {
-        return numberOfItem;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setNumberOfItem(long numberOfItem) {
-        this.numberOfItem = numberOfItem;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCategory() {
@@ -59,7 +71,7 @@ public class Items {
         this.description = description;
     }
 
-    public Users  getUsers() {
+    public Users getUsers() {
         return users;
     }
 
