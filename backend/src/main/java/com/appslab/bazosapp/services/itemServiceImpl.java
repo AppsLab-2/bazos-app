@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.appslab.bazosapp.repositories.itemRepository;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -30,5 +31,8 @@ public class itemServiceImpl implements itemService{
     @Override
     public Iterable<Items>roster(){
     return repo.findAll();
+    }
+    public Optional<Items> detail(long id){
+        return repo.findById(id);
     }
 }

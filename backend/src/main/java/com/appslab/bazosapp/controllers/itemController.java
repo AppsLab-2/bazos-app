@@ -3,6 +3,7 @@ import com.appslab.bazosapp.models.Items;
 import org.springframework.web.bind.annotation.*;
 import com.appslab.bazosapp.services.itemService;
 
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -23,5 +24,9 @@ public class itemController {
     public Iterable <Items> showItems(){
 
         return service.roster();
+    }
+    @GetMapping("/detailitem/{id}")
+    public Optional <Items> detailItems(@RequestParam long id){
+        return service.detail(id);
     }
 }
