@@ -1,5 +1,5 @@
 .box{
-  min-height: 30%;
+  min-height: 38%;
   max-height: 100%;
   width: 60%;
   margin-left: auto;
@@ -31,5 +31,45 @@
   padding-left: 5%;
 }
 .price{
+  padding-left: 2%;
+}
+.contact{
+  padding-top: 3%;
+}
+.contactinformation{
+  font-weight: bold;
+  padding-left: 5%;
+  font-size: 120%;
+}
+.nameusertext{
+  text-align: start;
+  font-weight: bold;
+  padding-left: 5%;
+}
+.nameuser{
+  padding-left: 2%;
+}
+.addresstext{
+  text-align: start;
+  font-weight: bold;
+  padding-left: 5%;
+}
+.address{
+  padding-left: 2%;
+}
+.telephonetext{
+  text-align: start;
+  font-weight: bold;
+  padding-left: 5%;
+}
+.telephone{
+  padding-left: 2%;
+}
+.emailtext{
+  text-align: start;
+  font-weight: bold;
+  padding-left: 5%;
+}
+.email{
   padding-left: 2%;
 }
