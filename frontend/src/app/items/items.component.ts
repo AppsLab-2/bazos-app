@@ -11,7 +11,6 @@ import { Item } from './item'
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  title = 'trade.co';
   items: Item[] = [];
 
   constructor(private itemService: ItemService) { }

@@ -1,7 +1,9 @@
-<app-navigation></app-navigation>
-<div *ngIf="item">
+<app-navigation xmlns="http://www.w3.org/1999/html"></app-navigation>
+<div class="box">
+  <div *ngIf="item">
       <div class="name">{{item.name}}</div>
-      <div class="description">{{item.description}}</div>
-      <div class="price">{{item.price}}</div>
+      <div><span class="descriptiontext">Popis:</span> <span class="description">{{item.description}}</span></div>
+      <div><span class="textprice">Cena:</span> <span class="price">{{item.price}}€</span></div>
+  </div>
 </div>
 <button (click)="goBack()">go back</button>
