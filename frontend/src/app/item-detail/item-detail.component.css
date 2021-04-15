@@ -17,7 +17,7 @@
   font-size: 200%;
   font-weight: bold;
 }
-.descriptiontext{
+.descriptionText{
   font-weight: bold;
   text-align: start;
   padding-left: 5%;
@@ -25,7 +25,7 @@
 .description{
   padding-left: 2%;
 }
-.textprice{
+.textPrice{
   font-weight: bold;
   text-align: start;
   padding-left: 5%;
@@ -36,20 +36,20 @@
 .contact{
   padding-top: 3%;
 }
-.contactinformation{
+.contactInformation{
   font-weight: bold;
   padding-left: 5%;
   font-size: 120%;
 }
-.nameusertext{
+.nameUserText{
   text-align: start;
   font-weight: bold;
   padding-left: 5%;
 }
-.nameuser{
+.nameUser{
   padding-left: 2%;
 }
-.addresstext{
+.addressText{
   text-align: start;
   font-weight: bold;
   padding-left: 5%;
@@ -57,7 +57,7 @@
 .address{
   padding-left: 2%;
 }
-.telephonetext{
+.telephoneText{
   text-align: start;
   font-weight: bold;
   padding-left: 5%;
@@ -65,7 +65,7 @@
 .telephone{
   padding-left: 2%;
 }
-.emailtext{
+.emailText{
   text-align: start;
   font-weight: bold;
   padding-left: 5%;
