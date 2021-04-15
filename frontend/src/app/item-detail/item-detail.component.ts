@@ -1,5 +1,5 @@
-import { ItemService } from './../item.service';
-import { Item } from './../items/item';
+import { ItemService } from '../services/item.service';
+import { Item } from '../models/item';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'

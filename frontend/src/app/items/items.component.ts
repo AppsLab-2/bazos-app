@@ -1,8 +1,8 @@
-import { ItemService } from './../item.service';
+import { ItemService } from '../services/item.service';
 import { AppComponent } from './../app.component';
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import { Item } from './item'
+import { Item } from '../models/item'
 
 
 @Component({
