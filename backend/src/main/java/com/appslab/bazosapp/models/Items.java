@@ -13,27 +13,27 @@ public class Items {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
-    String name;
-    String category;
-    float price;
-    String description;
+    private long id;
+    private String name;
+    private float price;
+    private String description;
+    private int category;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
-    public Items(long id, String name, String category, float price, String description) {
+    public Items(long id, String name, float price, String description) {
         this.id = id;
         this.name = name;
-        this.category = category;
         this.price = price;
         this.description = description;
     }
     public  Items(){
 
     }
+
     public long getId() {
         return id;
     }
@@ -50,14 +50,6 @@ public class Items {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public float getPrice() {
         return price;
     }
@@ -72,6 +64,14 @@ public class Items {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     public Users getUsers() {
