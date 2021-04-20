@@ -4,7 +4,7 @@ import com.appslab.bazosapp.models.Users;
 
 
 
-public interface userService {
+public interface UserService {
 
     void saveUser(Users user);
 

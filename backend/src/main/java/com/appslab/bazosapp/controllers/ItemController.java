@@ -1,17 +1,16 @@
 package com.appslab.bazosapp.controllers;
 import com.appslab.bazosapp.models.Items;
 import org.springframework.web.bind.annotation.*;
-import com.appslab.bazosapp.services.itemService;
+import com.appslab.bazosapp.services.ItemService;
 
 import java.util.Optional;
-import java.util.Set;
 
 @RestController
 @RequestMapping
-public class itemController {
-    itemService service;
+public class ItemController {
+    ItemService service;
 
-    public itemController(itemService service) {
+    public ItemController(ItemService service) {
 
         this.service = service;
     }
@@ -29,4 +28,5 @@ public class itemController {
     public Optional <Items> detailItems(@PathVariable long id){
         return service.detail(id);
     }
+
 }

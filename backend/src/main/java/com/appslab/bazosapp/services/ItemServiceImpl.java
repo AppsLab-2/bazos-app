@@ -2,17 +2,17 @@ package com.appslab.bazosapp.services;
 
 import com.appslab.bazosapp.models.Items;
 import org.springframework.stereotype.Service;
-import com.appslab.bazosapp.repositories.itemRepository;
+import com.appslab.bazosapp.repositories.ItemRepository;
 
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class itemServiceImpl implements itemService{
-    itemRepository repo;
+public class ItemServiceImpl implements ItemService {
+    ItemRepository repo;
 
-    public itemServiceImpl(itemRepository rep) {
+    public ItemServiceImpl(ItemRepository rep) {
 
         this.repo = rep;
     }
@@ -24,15 +24,14 @@ public class itemServiceImpl implements itemService{
         Set<Items>roster=new HashSet<>();
         roster.add(item);
 
-
-
-
     }
     @Override
     public Iterable<Items>roster(){
     return repo.findAll();
     }
+
     public Optional<Items> detail(long id){
         return repo.findById(id);
     }
+
 }

@@ -1,13 +1,13 @@
 package com.appslab.bazosapp.services;
 
 import com.appslab.bazosapp.models.Users;
-import com.appslab.bazosapp.repositories.userRepository;
+import com.appslab.bazosapp.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class userServiceImpl implements userService{
-    userRepository repositor;
-    public userServiceImpl(userRepository repositor){
+public class UserServiceImpl implements UserService {
+    UserRepository repositor;
+    public UserServiceImpl(UserRepository repositor){
         this.repositor=repositor;
     }
     @Override
