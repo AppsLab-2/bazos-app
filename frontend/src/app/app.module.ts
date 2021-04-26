@@ -9,7 +9,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormspageComponent } from './components/formspage/formspage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RegisterComponent } from './components/register/register.component';
 

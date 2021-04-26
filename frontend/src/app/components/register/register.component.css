@@ -160,3 +160,14 @@ input[type=text]:placeholder, input[type=password]:placeholder, input[type=numbe
 #password{
 
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

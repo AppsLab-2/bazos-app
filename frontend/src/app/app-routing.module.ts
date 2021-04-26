@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ItemsComponent } from './components/items/items.component';
 import { concat } from 'rxjs';
 import {RegisterComponent} from "./components/register/register.component";
+import {AuthGuard} from "./guard/auth.guard";
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'items', component: ItemsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'form', component: FormspageComponent },
+  { path: 'form', component: FormspageComponent, canActivate: [AuthGuard] },
   { path: 'detail/:id', component: ItemDetailComponent },
   { path: 'register', component: RegisterComponent }
 ];
