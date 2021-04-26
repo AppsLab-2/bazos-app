@@ -18,6 +18,7 @@ public class UserController {
     }
     @PostMapping("/newuser")
     public void userController(@RequestBody Users user){
+
         servis.saveUser(user);
     }
 
