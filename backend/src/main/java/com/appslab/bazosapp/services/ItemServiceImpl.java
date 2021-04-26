@@ -33,5 +33,6 @@ public class ItemServiceImpl implements ItemService {
     public Optional<Items> detail(long id){
         return repo.findById(id);
     }
-
+    @Override
+    public void deleteItem(long id) { repo.deleteById(id); }
 }

@@ -9,4 +9,5 @@ public interface ItemService {
     void saveItem(Items item);
     Iterable<Items> roster();
     Optional<Items> detail(long id);
+    void deleteItem(long id);
 }
