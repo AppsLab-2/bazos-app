@@ -3,6 +3,8 @@ import { Item } from '../../models/item';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
+import { User } from '../../models/user';
+
 
 @Component({
   selector: 'app-item-detail',

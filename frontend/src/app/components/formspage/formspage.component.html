@@ -1,1 +1,13 @@
 <app-navigation></app-navigation>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active"> Prihlásiť sa </h2>
+
+    <form [formGroup]="itemForm" (ngSubmit)="AddItem()">
+      <input formControlName="name" type="text" id="name" name="name" placeholder="Názov">
+      <input formControlName="description" type="text" id="description" name="description" placeholder="Popis">
+      <input formControlName="price" type="number" id="price" name="price" placeholder="Cena">
+      <input [disabled]="!submit" type="submit" value="Prihlásiť" >
+    </form>
+  </div>
+</div>

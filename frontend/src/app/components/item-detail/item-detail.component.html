@@ -6,10 +6,10 @@
       <div><span class="textPrice">Cena:</span> <span class="price">{{item.price}}€</span></div>
       <div class="contact">
         <div class="contactInformation">Kontaktné údaje</div>
-        <div><span class="nameUserText">Meno:</span><span class="nameUser"></span></div>
-        <div><span class="addressText">Adresa:</span><span class="address"></span></div>
-        <div><span class="telephoneText">Telefónne číslo:</span><span class="telephone"></span></div>
-        <div><span class="emailText">Email:</span><span class="email"></span></div>
+        <div><span class="nameUserText">Meno:</span>{{user.firstName}} {{user.lastName}}<span class="nameUser"></span></div>
+        <div><span class="addressText">Adresa:</span>{{user.town}}, {{user.address}}<span class="address"></span></div>
+        <div><span class="telephoneText">Telefónne číslo:</span>{{user.phone}}<span class="telephone"></span></div>
+        <div><span class="emailText">Email:</span><span class="email">{{user.login}}</span></div>
       </div>
   </div>
 </div>
