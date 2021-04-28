@@ -16,10 +16,6 @@ public class UserController {
         this.servis=servis;
 
     }
-    @PostMapping("/newuser")
-    public void userController(@RequestBody Users user){
 
-        servis.saveUser(user);
-    }
 
 }
