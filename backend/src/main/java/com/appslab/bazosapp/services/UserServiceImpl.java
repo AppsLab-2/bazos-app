@@ -4,18 +4,21 @@ import com.appslab.bazosapp.dto.UserRegistrationDto;
 import com.appslab.bazosapp.models.Role;
 import com.appslab.bazosapp.models.Users;
 import com.appslab.bazosapp.repositories.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 
-
+    private PasswordEncoder encoder;
     private UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(PasswordEncoder encoder, UserRepository userRepository) {
+        this.encoder = encoder;
         this.userRepository = userRepository;
     }
 
@@ -29,8 +32,13 @@ public class UserServiceImpl implements UserService {
         user.setRole(Role.USER);
         user.setCity(registrationDto.getCity());
         user.setEmail(registrationDto.getEmail());
-        user.setPassword(registrationDto.getPassword());
+        user.setPassword(encoder.encode(registrationDto.getPassword()));
+        user.setState(registrationDto.getState());
+        user.setPhoneNumber(registrationDto.getPhoneNumber());
         return userRepository.save(user);
 
     }
+    @Override
+    public Optional<Users> getUserByEmail(String email){ return userRepository.findByEmail(email); }
+
 }

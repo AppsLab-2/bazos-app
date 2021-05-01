@@ -1,11 +1,11 @@
 package com.appslab.bazosapp.controllers;
 
+import com.appslab.bazosapp.dto.UserRegistrationDto;
 import com.appslab.bazosapp.models.Users;
 import com.appslab.bazosapp.services.UserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping
@@ -15,6 +15,15 @@ public class UserController {
     public UserController(UserService servis){
         this.servis=servis;
 
+    }
+    @GetMapping("/detailuser/{email}")
+    public Optional<Users> detailUser(@PathVariable String email) { return servis.getUserByEmail(email); }
+    @GetMapping("/user")
+    public void getUser(){
+    }
+    @PostMapping("/saveuser")
+    public void saveUser(@RequestBody UserRegistrationDto userRegistrationDto){
+        servis.save(userRegistrationDto);
     }
 
 
