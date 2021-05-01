@@ -1,10 +1,11 @@
 package com.appslab.bazosapp.models;
 
+public enum Role {
+    USER("User"),
+    ADMIN("Admin");
+    protected final String name;
 
-import javax.persistence.Entity;
-
-@Entity
-public class Role {
-    private  long id;
-    private String name;
+    Role(String name) {
+        this.name = name;
+    }
 }

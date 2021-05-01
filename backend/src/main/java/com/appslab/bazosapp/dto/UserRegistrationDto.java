@@ -1,21 +1,9 @@
-package com.appslab.bazosapp.models;
+package com.appslab.bazosapp.dto;
 
-import org.hibernate.annotations.GeneratorType;
+import javax.persistence.Column;
 
-
-import javax.persistence.*;
-import java.util.Collection;
-import java.util.Set;
-
-@Entity
-@Table(name = "user", uniqueConstraints=@UniqueConstraint(columnNames = "email") )
-public class Users {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
-    @Column(name = "first_name")
+public class UserRegistrationDto {
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
     private String email;
     private String password;
@@ -24,13 +12,7 @@ public class Users {
     private String state;
     private String phoneNumber;
 
-    @Enumerated
-    private Role role;
-
-    @OneToMany(mappedBy = "users")
-    private Set<Items> items;
-
-    public Users(String firstName, String lastName, String email, String password, String address, String city, String state, String phoneNumber, Role role, Set<Items> items) {
+    public UserRegistrationDto(String firstName, String lastName, String email, String password, String address, String city, String state, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -39,19 +21,9 @@ public class Users {
         this.city = city;
         this.state = state;
         this.phoneNumber = phoneNumber;
-        this.role = role;
-        this.items = items;
     }
-    public Users(){
+    public UserRegistrationDto(){
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -116,21 +88,5 @@ public class Users {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public Set<Items> getItems() {
-        return items;
-    }
-
-    public void setItems(Set<Items> items) {
-        this.items = items;
     }
 }
