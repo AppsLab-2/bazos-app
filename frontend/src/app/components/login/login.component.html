@@ -3,8 +3,8 @@
   <div id="formContent">
     <h2 class="active"> Prihlásiť sa </h2>
 
-    <form>
-      <input formControlName="username" type="text" id="login" name="login" placeholder="Email">
+    <form [formGroup]="loginGroup" (ngSubmit)="login()">
+      <input formControlName="username" type="text" id="login" name="login" placeholder="Prihlasovacie meno">
       <input formControlName="password" type="password" id="password" name="login"  autocomplete="off" autocapitalize="off"
              autocorrect="off"  placeholder="Heslo">
       <input [disabled]="!loginGroup.valid" type="submit" value="Prihlásiť" >

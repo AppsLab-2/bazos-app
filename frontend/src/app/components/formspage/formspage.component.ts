@@ -29,11 +29,6 @@ export class FormspageComponent implements OnInit {
   }
 
   AddItem():void{
-    const model = {
-      name: this.itemForm.controls.name.value,
-      price: this.itemForm.controls.price.value,
-      description: this.itemForm.controls.description.value,
-    }
-    this.itemService.AddItem(model as Item).subscribe();
+    this.itemService.AddItem(this.itemForm.value).subscribe();
   }
 }

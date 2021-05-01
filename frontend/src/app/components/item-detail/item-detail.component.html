@@ -4,7 +4,7 @@
       <div class="name">{{item.name}}</div>
       <div><span class="descriptionText">Popis:</span> <span class="description">{{item.description}}</span></div>
       <div><span class="textPrice">Cena:</span> <span class="price">{{item.price}}€</span></div>
-      <div class="contact">
+      <div class="contact" *ngIf="user">
         <div class="contactInformation">Kontaktné údaje</div>
         <div><span class="nameUserText">Meno:</span>{{user.firstName}} {{user.lastName}}<span class="nameUser"></span></div>
         <div><span class="addressText">Adresa:</span>{{user.city}}, {{user.address}}<span class="address"></span></div>

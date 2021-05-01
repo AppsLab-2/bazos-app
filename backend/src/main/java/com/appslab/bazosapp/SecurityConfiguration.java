@@ -26,9 +26,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests().antMatchers(
-                "/saveuser").permitAll()
+                "/saveuser", "/showitems", "/detailitem/{id}").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                .cors().and()
                 .csrf().disable()
                 .httpBasic();
 
