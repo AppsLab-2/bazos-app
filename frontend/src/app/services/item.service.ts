@@ -24,7 +24,7 @@ export class ItemService {
   }
 
   AddItem(item: Item) {
-    return this.http.post(REST_API + '/saveitem', item);
+    return this.http.post(REST_API + '/newitem', item);
   }
 
 }
