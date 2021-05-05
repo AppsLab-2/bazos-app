@@ -1,4 +1,4 @@
-package com.appslab.bazosapp;
+package com.appslab.bazosapp.security;
 
 import com.appslab.bazosapp.models.Users;
 import org.springframework.security.core.GrantedAuthority;

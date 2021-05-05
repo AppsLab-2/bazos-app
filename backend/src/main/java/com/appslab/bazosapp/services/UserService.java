@@ -11,5 +11,6 @@ public interface UserService {
 
     Users save(UserRegistrationDto registrationDto);
     Optional<Users> getUserByEmail(String email);
-
+    Long getUserId();
+    Optional <Users>getUserById(Long id);
 }

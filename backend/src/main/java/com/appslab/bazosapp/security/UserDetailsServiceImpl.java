@@ -1,5 +1,6 @@
-package com.appslab.bazosapp;
+package com.appslab.bazosapp.security;
 
+import com.appslab.bazosapp.security.UserDetailsImpl;
 import com.appslab.bazosapp.services.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

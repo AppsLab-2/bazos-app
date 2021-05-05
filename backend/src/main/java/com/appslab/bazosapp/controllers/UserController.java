@@ -16,7 +16,14 @@ public class UserController {
         this.servis=servis;
 
     }
+
+    @GetMapping("/detailuserid/{id}")
+
+    public Optional<Users> detailUserId(@PathVariable long id) {
+        return servis.getUserById(id); }
+
     @GetMapping("/detailuser/{email}")
+
     public Optional<Users> detailUser(@PathVariable String email) { return servis.getUserByEmail(email); }
     @GetMapping("/user")
     public void getUser(){

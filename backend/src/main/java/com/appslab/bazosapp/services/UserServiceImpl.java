@@ -4,6 +4,8 @@ import com.appslab.bazosapp.dto.UserRegistrationDto;
 import com.appslab.bazosapp.models.Role;
 import com.appslab.bazosapp.models.Users;
 import com.appslab.bazosapp.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +42,16 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public Optional<Users> getUserByEmail(String email){ return userRepository.findByEmail(email); }
+    @Override
+    public Long getUserId (){
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String email = userDetails.getUsername();
+        Optional<Users> user = userRepository.findByEmail(email);
+        return user.get().getId();
+    }
 
+    @Override
+    public Optional<Users> getUserById(Long id) {
+        return userRepository.findById(id);
+    }
 }

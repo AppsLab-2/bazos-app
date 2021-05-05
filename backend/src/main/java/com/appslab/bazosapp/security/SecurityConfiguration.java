@@ -1,4 +1,4 @@
-package com.appslab.bazosapp;
+package com.appslab.bazosapp.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,5 +1,6 @@
 package com.appslab.bazosapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GeneratorType;
 
 
@@ -19,17 +20,19 @@ public class Users {
     private String lastName;
     @Column (name = "email", unique = true,nullable = false)
     private String email;
+    @JsonIgnore
     private String password;
     private String address;
     private String city;
     private String state;
     private String phoneNumber;
 
+    @JsonIgnore
     @Enumerated
     private Role role;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "users")
-    private Set<Items> items;
+    public Set<Items> items;
 
     public Users(String firstName, String lastName, String email, String password, String address, String city, String state, String phoneNumber, Role role, Set<Items> items) {
         this.firstName = firstName;

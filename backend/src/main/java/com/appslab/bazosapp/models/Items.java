@@ -19,10 +19,21 @@ public class Items {
     private String description;
     private int category;
 
-    @JsonIgnore
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", insertable = false, updatable=false)
+
     private Users users;
+    @Column(name = "user_id")
+    private Long userId;
 
     public Items(long id, String name, float price, String description) {
         this.id = id;

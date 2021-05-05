@@ -1,6 +1,8 @@
 package com.appslab.bazosapp.services;
 
 import com.appslab.bazosapp.models.Items;
+import com.appslab.bazosapp.models.Users;
+import com.appslab.bazosapp.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 import com.appslab.bazosapp.repositories.ItemRepository;
 
@@ -12,14 +14,18 @@ import java.util.Set;
 public class ItemServiceImpl implements ItemService {
     ItemRepository repo;
 
-    public ItemServiceImpl(ItemRepository rep) {
+    UserService userService;
 
-        this.repo = rep;
+
+
+    public ItemServiceImpl(ItemRepository repo,UserService userService) {
+       this.repo=repo;
+        this.userService=userService;
     }
 
     @Override
     public void saveItem(Items item) {
-
+        item.setUserId(userService.getUserId());
         repo.save(item);
         Set<Items>roster=new HashSet<>();
         roster.add(item);
@@ -29,10 +35,13 @@ public class ItemServiceImpl implements ItemService {
     public Iterable<Items>roster(){
     return repo.findAll();
     }
-
+    @Override
     public Optional<Items> detail(long id){
         return repo.findById(id);
+
     }
     @Override
     public void deleteItem(long id) { repo.deleteById(id); }
+
+
 }

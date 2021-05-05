@@ -1,5 +1,8 @@
 package com.appslab.bazosapp.controllers;
 import com.appslab.bazosapp.models.Items;
+import com.appslab.bazosapp.models.Users;
+import com.appslab.bazosapp.services.UserService;
+import com.sun.istack.Nullable;
 import org.springframework.web.bind.annotation.*;
 import com.appslab.bazosapp.services.ItemService;
 
@@ -9,6 +12,8 @@ import java.util.Optional;
 @RequestMapping
 public class ItemController {
     ItemService service;
+    Users users;
+
 
     public ItemController(ItemService service) {
         this.service = service;
@@ -20,12 +25,13 @@ public class ItemController {
     }
 
     @GetMapping("/showitems")
-    public Iterable <Items> showItems(){
+    public Iterable <Items> showItems(Users users){
         return service.roster();
     }
 
     @GetMapping("/detailitem/{id}")
-    public Optional <Items> detailItems(@PathVariable long id){
+    public Optional <Items>detailItems(@PathVariable long id){
+
 
         return service.detail(id);
     }
@@ -34,4 +40,5 @@ public class ItemController {
     public void deleteItem(@PathVariable long id) {
         service.deleteItem(id);
     }
+
 }
