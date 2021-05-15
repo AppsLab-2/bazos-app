@@ -28,7 +28,7 @@ export class FormspageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  AddItem():void{
-    this.itemService.AddItem(this.itemForm.value).subscribe();
+  addItem():void{
+    this.itemService.addItem(this.itemForm.value).subscribe();
   }
 }

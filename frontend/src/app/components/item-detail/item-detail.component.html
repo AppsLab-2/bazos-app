@@ -6,10 +6,10 @@
       <div><span class="textPrice">Cena:</span> <span class="price">{{item.price}}€</span></div>
       <div class="contact" *ngIf="user">
         <div class="contactInformation">Kontaktné údaje</div>
-        <div><span class="nameUserText">Meno:</span>{{user.firstName}} {{user.lastName}}<span class="nameUser"></span></div>
-        <div><span class="addressText">Adresa:</span>{{user.city}}, {{user.address}}<span class="address"></span></div>
-        <div><span class="telephoneText">Telefónne číslo:</span>{{user.phoneNumber}}<span class="telephone"></span></div>
-        <div><span class="emailText">Email:</span><span class="email">{{user.email}}</span></div>
+        <div><span class="nameUserText">Meno: </span><span class="nameUser">{{user.firstName}} {{user.lastName}}</span></div>
+        <div><span class="addressText">Adresa: </span><span class="address">{{user.city}}, {{user.address}}</span></div>
+        <div><span class="telephoneText">Telefónne číslo: </span><span class="telephone">{{user.phoneNumber}}</span></div>
+        <div><span class="emailText">Email: </span><span class="email">{{user.email}}</span></div>
       </div>
   </div>
 </div>

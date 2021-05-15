@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit():void{
 
-    this.userService.AddUser(this.userForm.value)
+    this.userService.addUser(this.userForm.value)
       .subscribe(() => this.router.navigateByUrl('/login'));
   }
 

@@ -26,7 +26,9 @@ export class ItemDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.itemService.getItem(id)
-      .subscribe(item => this.item = item);
+      .subscribe(item => {
+        this.item = item; this.user = item.users;
+      });
   }
 
   goBack(): void {
