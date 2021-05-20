@@ -1,0 +1,53 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.items {
+  list-style-type: none;
+  padding: 0;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+.items li {
+  cursor: pointer;
+}
+
+.items li:hover {
+  left: 0.1em;
+}
+
+.items a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color: rgb(248, 215, 185);
+  margin: auto;
+  margin-top: 40px;
+  padding: 3em 0;
+  height: 50px;
+  border-radius: 50px;
+  display: block;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.items a:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.items a:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+.name {
+  text-align: center;
+  padding-left: 30%;
+  font-size: 30px;
+}
+.price {
+  text-align: center;
+  float: right;
+  padding-right: 40px;
+  font-size: 30px;
+}
