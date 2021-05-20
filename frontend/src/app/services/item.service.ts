@@ -27,4 +27,8 @@ export class ItemService {
     return this.http.post(REST_API + '/newitem', item);
   }
 
+  getUserItems(): Observable<Item[]> {
+    return this.http.get<Item[]>(REST_API + '/useritems')
+  }
+
 }

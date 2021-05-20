@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemsComponent } from './components/items/items.component';
 import { concat } from 'rxjs';
+import {UserpageComponent} from "./components/userpage/userpage.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AuthGuard} from "./guard/auth.guard";
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'form', component: FormspageComponent, canActivate: [AuthGuard] },
   { path: 'detail/:id', component: ItemDetailComponent },
+  { path: 'userpage', component: UserpageComponent },
   { path: 'register', component: RegisterComponent }
 ];
 

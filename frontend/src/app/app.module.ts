@@ -13,6 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { RegisterComponent } from './components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthInterceptor} from "./interceptor/auth.interceptor";
+import { UserpageComponent } from './components/userpage/userpage.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AuthInterceptor} from "./interceptor/auth.interceptor";
     ContactComponent,
     FormspageComponent,
     NavigationComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserpageComponent
   ],
   imports: [
     BrowserModule,
