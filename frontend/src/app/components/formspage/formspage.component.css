@@ -60,10 +60,6 @@ h2.active {
   color: orange;
 }
 
-
-
-/* FORM TYPOGRAPHY*/
-
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: orange;
   border: none;
@@ -168,4 +164,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+#description{
+  height: 100px;
 }

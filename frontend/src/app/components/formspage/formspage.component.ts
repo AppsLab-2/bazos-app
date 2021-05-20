@@ -4,6 +4,7 @@ import {UserService} from "../../services/user.service";
 import {ItemService} from "../../services/item.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {User} from "../../models/user";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,12 +24,14 @@ export class FormspageComponent implements OnInit {
     return this.itemForm.valid;
   }
 
-  constructor(private itemService:ItemService) { }
+  constructor(private itemService:ItemService,
+              private readonly router: Router) { }
 
   ngOnInit(): void {
   }
 
   addItem():void{
-    this.itemService.addItem(this.itemForm.value).subscribe();
+    this.itemService.addItem(this.itemForm.value)
+      .subscribe(() => this.router.navigateByUrl('/items'));
   }
 }

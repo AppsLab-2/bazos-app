@@ -1,4 +1,12 @@
 <app-navigation></app-navigation>
+<div class="dropdown">
+  <button class="dropbtn">{{sortBy}}</button>
+  <div class="dropdown-content">
+    <a (click)="sortItem('name')">Mena</a>
+    <a (click)="sortItem('lowestPrice')">Najnižšej ceny</a>
+    <a (click)="sortItem('biggestPrice')">Najvyššej ceny</a>
+  </div>
+</div>
 <ul class="items">
     <li *ngFor="let item of items" >
         <a routerLink="/detail/{{item.id}}">

@@ -12,6 +12,7 @@ import { Item } from '../../models/item'
 })
 export class ItemsComponent implements OnInit {
   items: Item[] = [];
+  sortBy: string = 'name';
 
   constructor(private itemService: ItemService) { }
 
@@ -22,5 +23,20 @@ export class ItemsComponent implements OnInit {
   getItems(): void{
     this.itemService.getItems()
       .subscribe(items => this.items = items);
+  }
+
+  sortItem(sortBy: string){
+    this.sortBy = sortBy
+    this.sort();
+  }
+  sort() {
+    if(this.sortBy === 'name')
+      this.items.sort((a,b) => a.name.localeCompare(b.name));
+
+    if(this.sortBy === 'lowestPrice')
+      this.items.sort((a,b) => a.price > b.price ? 1 : -1);
+
+    if(this.sortBy === 'BiggestPrice')
+      this.items.sort((a,b) => a.price > b.price ? 1 : -1);
   }
 }
