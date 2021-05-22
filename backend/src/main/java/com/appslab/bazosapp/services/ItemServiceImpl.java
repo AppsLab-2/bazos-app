@@ -47,5 +47,8 @@ public class ItemServiceImpl implements ItemService {
     public Iterable<Items> sort(Sort sort) {
         return repo.findAll(sort);
     }
-
+    @Override
+    public Iterable <Items> showUserItems(Users users){
+        return users.getItems();
+    }
 }

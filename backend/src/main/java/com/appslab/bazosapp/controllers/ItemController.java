@@ -26,6 +26,7 @@ public class ItemController {
 
     @GetMapping("/showitems")
     public Iterable <Items> showItems(Users users){
+
         return service.roster();
     }
 
@@ -40,5 +41,8 @@ public class ItemController {
     public void deleteItem(@PathVariable long id) {
         service.deleteItem(id);
     }
-
+    @GetMapping("/showuseritems")
+    public Iterable <Items> showUserItems(Users users){
+        return  users.getItems();
+    }
 }

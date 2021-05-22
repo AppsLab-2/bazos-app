@@ -2,6 +2,7 @@ package com.appslab.bazosapp.controllers;
 
 import com.appslab.bazosapp.dto.UserRegistrationDto;
 import com.appslab.bazosapp.models.Users;
+import com.appslab.bazosapp.services.ItemService;
 import com.appslab.bazosapp.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 public class UserController {
     UserService servis;
+
     public UserController(UserService servis){
         this.servis=servis;
 
