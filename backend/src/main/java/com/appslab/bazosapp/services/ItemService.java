@@ -2,6 +2,7 @@ package com.appslab.bazosapp.services;
 
 import com.appslab.bazosapp.models.Items;
 import com.appslab.bazosapp.models.Users;
+import org.apache.catalina.User;
 import org.springframework.data.domain.Sort;
 
 import java.util.Optional;
@@ -13,5 +14,6 @@ public interface ItemService {
     void deleteItem(long id);
     Iterable<Items> sort(Sort sort);
     Iterable<Items> roster();
-    Iterable <Items> showUserItems(Users users);
+   // Iterable <Items> showUserItems(Users users);
+    //Set<User> search(String search);
 }

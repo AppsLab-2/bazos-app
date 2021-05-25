@@ -1,17 +1,28 @@
 package com.appslab.bazosapp.controllers;
 
 import com.appslab.bazosapp.dto.UserRegistrationDto;
+import com.appslab.bazosapp.models.Items;
 import com.appslab.bazosapp.models.Users;
+import com.appslab.bazosapp.repositories.UserRepository;
 import com.appslab.bazosapp.services.ItemService;
 import com.appslab.bazosapp.services.UserService;
+import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.Optional;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping
 
 public class UserController {
+    @Autowired
+    UserRepository repo;
     UserService servis;
 
     public UserController(UserService servis){
@@ -34,6 +45,7 @@ public class UserController {
     public void saveUser(@RequestBody UserRegistrationDto userRegistrationDto){
         servis.save(userRegistrationDto);
     }
+
 
 
 }
