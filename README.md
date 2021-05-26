@@ -1,6 +1,6 @@
 # bazos-app
 
-Stránka na štýl bazošu, letgo ... kde ľudia budú môcť pridávať rôzne inzeráty a priraďovať ich do jednotlivých kategórii.
+Stránka na štýl bazošu, letgo ... kde ľudia budú môcť pridávať rôzne inzeráty a priraďovať ich ku svojim kontám.
 
 Must have: pridanie inzeratu, odstránenie inzerátu, kategorie, popis, nazov, fotka, cena, adresa, login
 
