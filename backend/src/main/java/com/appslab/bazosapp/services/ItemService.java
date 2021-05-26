@@ -14,6 +14,7 @@ public interface ItemService {
     void deleteItem(long id);
     Iterable<Items> sort(Sort sort);
     Iterable<Items> roster();
-   // Iterable <Items> showUserItems(Users users);
-    //Set<User> search(String search);
+    Set <Items> showUserItems(Users user);
+
+
 }

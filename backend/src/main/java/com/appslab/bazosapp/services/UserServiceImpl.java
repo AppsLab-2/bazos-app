@@ -68,7 +68,15 @@ public class UserServiceImpl implements UserService {
     public Optional<Users> getUserById(Long id) {
         return userRepository.findById(id);
     }
-
+    @Override
+    public Users getCurrentUser() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal();
+        String email = userDetails.getUsername();
+        return this.userRepository.findByEmail(email).orElseThrow();
+    }
 
 }
 
