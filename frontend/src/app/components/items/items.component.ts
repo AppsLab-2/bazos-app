@@ -30,13 +30,7 @@ export class ItemsComponent implements OnInit {
     this.sort();
   }
   sort() {
-    if(this.sortBy === 'name')
-      this.items.sort((a,b) => a.name.localeCompare(b.name));
-
-    if(this.sortBy === 'lowestPrice')
-      this.items.sort((a,b) => a.price > b.price ? 1 : -1);
-
-    if(this.sortBy === 'BiggestPrice')
-      this.items.sort((a,b) => a.price > b.price ? 1 : -1);
+    this.itemService.getSortedItems(this.sortBy)
+      .subscribe(items => this.items = items);
   }
 }

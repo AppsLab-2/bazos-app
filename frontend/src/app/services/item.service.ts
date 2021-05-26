@@ -23,6 +23,10 @@ export class ItemService {
     return this.http.get<Item[]>(REST_API + '/showitems')
   }
 
+  getSortedItems(sortBy: string): Observable<Item[]> {
+    return this.http.get<Item[]>(REST_API + '/sortitems', { params: { parameter: sortBy } })
+  }
+
   addItem(item: Item) {
     return this.http.post(REST_API + '/newitem', item);
   }

@@ -1,6 +1,7 @@
 <app-navigation></app-navigation>
 <ul class="items">
-  <input routerLink="/items" (click)="Submit()" type="submit" value="Odhlásiť sa" >
+  <input routerLink="/login" (click)="Submit()" type="submit" value="Odhlásiť sa" >
+  <input routerLink="/userinfo" (click)="Submit()" type="submit" value="Informácie o použivateľovi" >
   <li *ngFor="let item of items" >
     <a routerLink="/detail/{{item.id}}">
       <span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>

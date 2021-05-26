@@ -2,6 +2,7 @@
 <div class="box">
   <div *ngIf="item">
       <div class="name">{{item.name}}</div>
+    <div><img [src]="item.image"></div>
       <div><span class="descriptionText">Popis:</span> <span class="description">{{item.description}}</span></div>
       <div><span class="textPrice">Cena:</span> <span class="price">{{item.price}}€</span></div>
       <div class="contact" *ngIf="user">

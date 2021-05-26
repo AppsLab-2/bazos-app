@@ -18,6 +18,7 @@ public class Items {
     private float price;
     private String description;
     private int category;
+    private String image;
 
     public Long getUserId() {
         return userId;
@@ -91,5 +92,13 @@ public class Items {
 
     public void setUsers(Users users) {
         this.users = users;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

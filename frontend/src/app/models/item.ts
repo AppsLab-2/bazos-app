@@ -6,4 +6,5 @@ export interface Item {
     description: string;
     category: string;
     users: User;
+    image: string;
   }

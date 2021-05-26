@@ -17,17 +17,10 @@ import java.util.Optional;
 public class ItemController {
     ItemService service;
     UserService servis;
-    Users users;
 
-    public ItemController(){
-
-    }
-    public ItemController(UserService servis) {
-        this.servis = servis;
-    }
-
-    public ItemController(ItemService service) {
+    public ItemController(ItemService service, UserService servis) {
         this.service = service;
+        this.servis = servis;
     }
 
     @PostMapping("/newitem")
@@ -36,7 +29,7 @@ public class ItemController {
     }
 
     @GetMapping("/showitems")
-    public Iterable <Items> showItems(Users users){
+    public Iterable <Items> showItems(){
 
         return service.roster();
     }

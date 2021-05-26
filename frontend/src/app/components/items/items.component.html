@@ -1,16 +1,17 @@
 <app-navigation></app-navigation>
 <div class="dropdown">
-  <button class="dropbtn">{{sortBy}}</button>
-  <div class="dropdown-content">
-    <a (click)="sortItem('name')">Mena</a>
-    <a (click)="sortItem('lowestPrice')">Najnižšej ceny</a>
-    <a (click)="sortItem('biggestPrice')">Najvyššej ceny</a>
-  </div>
+    <button class="dropbtn">Zoradiť podľa</button>
+    <div class="dropdown-content">
+      <a (click)="sortItem('name')">Názvu</a>
+      <a (click)="sortItem('price')">Ceny</a>
+    </div>
 </div>
+
+<hr>
 <ul class="items">
     <li *ngFor="let item of items" >
         <a routerLink="/detail/{{item.id}}">
-            <span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
+            <img [src]="item.image"><span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
         </a>
     </li>
 </ul>

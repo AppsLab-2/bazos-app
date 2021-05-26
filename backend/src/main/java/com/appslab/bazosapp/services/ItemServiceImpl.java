@@ -33,8 +33,6 @@ public class ItemServiceImpl implements ItemService {
     public void saveItem(Items item) {
         item.setUserId(userService.getUserId());
         repo.save(item);
-        Set<Items>roster=new HashSet<>();
-        roster.add(item);
 
     }
     @Override

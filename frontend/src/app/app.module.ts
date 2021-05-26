@@ -14,6 +14,8 @@ import { RegisterComponent } from './components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthInterceptor} from "./interceptor/auth.interceptor";
 import { UserpageComponent } from './components/userpage/userpage.component';
+import { SortingComponent } from './components/sorting/sorting.component';
+import { UserinfoComponent } from './components/userinfo/userinfo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { UserpageComponent } from './components/userpage/userpage.component';
     FormspageComponent,
     NavigationComponent,
     RegisterComponent,
-    UserpageComponent
+    UserpageComponent,
+    SortingComponent,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,

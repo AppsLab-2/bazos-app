@@ -9,6 +9,7 @@ import { concat } from 'rxjs';
 import {UserpageComponent} from "./components/userpage/userpage.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AuthGuard} from "./guard/auth.guard";
+import {UserinfoComponent} from "./components/userinfo/userinfo.component";
 
 
 const routes: Routes = [
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'form', component: FormspageComponent, canActivate: [AuthGuard] },
   { path: 'detail/:id', component: ItemDetailComponent },
-  { path: 'userpage', component: UserpageComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'userpage', component: UserpageComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent },
+  { path: 'userinfo', component: UserinfoComponent }
 ];
 
 @NgModule({

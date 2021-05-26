@@ -18,6 +18,7 @@ export class FormspageComponent implements OnInit {
     name: new FormControl("", Validators.required),
     price: new FormControl("", Validators.required),
     description: new FormControl("", Validators.required),
+    image: new FormControl(""),
   });
 
   get submit(): boolean {
