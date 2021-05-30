@@ -20,18 +20,18 @@ export class UserinfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private itemService: ItemService,
     private userService: UserService) { }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
-    this.itemService.getItem(id)
-      .subscribe(item => {
-        this.item = item; this.user = item.users;
-      });
+  /*this.getUserInfo();*/
   }
 
   goBack(): void {
     this.location.back();
   }
+
+  /*getUserInfo(): void{
+    this.userService.getUserInfo()
+      .subscribe(users => this.users = users);
+  }*/
 }

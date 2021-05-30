@@ -31,6 +31,12 @@ public class ItemServiceImpl implements ItemService {
     public Iterable<Items>roster(){
     return repo.findAll();
     }
+
+    @Override
+    public Set<Items> showUserItems(Users user) {
+        return null;
+    }
+
     @Override
     public Optional<Items> detail(long id){
         return repo.findById(id);

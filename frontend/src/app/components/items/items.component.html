@@ -8,10 +8,10 @@
 </div>
 
 <hr>
-<ul class="items">
-    <li *ngFor="let item of items" >
-        <a routerLink="/detail/{{item.id}}">
-            <img [src]="item.image"><span class="name">{{item.name}}</span><span class="price">{{item.price}}€</span>
-        </a>
-    </li>
-</ul>
+<div class="items">
+    <div *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="buble">
+      <img class="img" [src]="item.image">
+      <div class="name">{{item.name}}</div>
+      <div class="price">{{item.price}}€</div>
+    </div>
+</div>
