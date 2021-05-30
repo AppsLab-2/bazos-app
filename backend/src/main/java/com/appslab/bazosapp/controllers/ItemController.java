@@ -1,27 +1,32 @@
 package com.appslab.bazosapp.controllers;
 import com.appslab.bazosapp.models.Items;
-import com.appslab.bazosapp.models.Users;
+import com.appslab.bazosapp.repositories.ItemRepository;
 import com.appslab.bazosapp.services.UserService;
-import com.sun.istack.Nullable;
-import org.apache.catalina.User;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import com.appslab.bazosapp.services.ItemService;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping
 public class ItemController {
     ItemService service;
-    UserService servis;
+    UserService userService;
+    ItemRepository itemRepository;
 
-    public ItemController(ItemService service, UserService servis) {
+    public ItemController(){
+
+    }
+    public ItemController(ItemService service, UserService userService,ItemRepository itemRepository) {
         this.service = service;
-        this.servis = servis;
+        this.userService=userService;
+        this.itemRepository=itemRepository;
     }
 
 
@@ -36,12 +41,6 @@ public class ItemController {
         return service.roster();
     }
 
-
-    @GetMapping("/useritems")
-    public Set<Items> showUserItems(Users user){
-
-        return user.getItems();
-    }
     @GetMapping("/deleteitem/{id}")
     public void deleteItem(@PathVariable long id) {
         service.deleteItem(id);
@@ -61,5 +60,15 @@ public class ItemController {
         Sort sort = Sort.by(parameter);
         return service.sort(sort);
     }
+    @GetMapping("/showuseritems")
+    public Set<Items> showUserItems() {
 
+
+        return userService.getCurrentUser().getItems();
+    }
+    @GetMapping("/items")
+    public Iterable<Items> search(@RequestParam String search){
+
+        return itemRepository.findByNameOrDescriptionContaining(search);
+    }
 }
