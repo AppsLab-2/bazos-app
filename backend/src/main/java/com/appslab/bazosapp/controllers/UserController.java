@@ -27,7 +27,8 @@ public class UserController {
 
     public Optional<Users> detailUser(@PathVariable String email) { return servis.getUserByEmail(email); }
     @GetMapping("/user")
-    public void getUser(){
+    public Users getUser(){
+        return servis.getCurrentUser();
     }
     @PostMapping("/saveuser")
     public void saveUser(@RequestBody UserRegistrationDto userRegistrationDto){
