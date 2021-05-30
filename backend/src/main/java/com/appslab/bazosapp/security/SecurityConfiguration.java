@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests().antMatchers(
-                "/saveuser", "/showitems", "/detailitem/{id}", "/sortitems").permitAll()
+                "/saveuser", "/showitems", "/detailitem/{id}", "/sortitems", "/items").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .cors().and()

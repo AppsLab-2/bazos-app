@@ -13,6 +13,7 @@ import { Item } from '../../models/item'
 export class ItemsComponent implements OnInit {
   items: Item[] = [];
   sortBy: string = 'name';
+  searchBy: string = 'name';
 
   constructor(private itemService: ItemService) { }
 
@@ -31,6 +32,16 @@ export class ItemsComponent implements OnInit {
   }
   sort() {
     this.itemService.getSortedItems(this.sortBy)
+      .subscribe(items => this.items = items);
+  }
+
+  searchItem(searchBy: string){
+    this.searchBy = searchBy
+    this.search();
+  }
+
+  search() {
+    this.itemService.getSearchedItems(this.searchBy)
       .subscribe(items => this.items = items);
   }
 }

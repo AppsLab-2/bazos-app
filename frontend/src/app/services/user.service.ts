@@ -16,8 +16,8 @@ export class UserService {
       return this.http.post(REST_API + '/saveuser', user);
   }
 
-  getUserInfo(email: string): Observable<Item> {
-    const url = `${REST_API}/detailuser/{email}`;
-    return this.http.get<Item>(url)
+  getUserInfo(): Observable<User> {
+    const url = `${REST_API}/user/`;
+    return this.http.get<User>(url)
   }
 }

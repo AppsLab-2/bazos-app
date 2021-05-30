@@ -20,9 +20,6 @@ public class ItemController {
     UserService userService;
     ItemRepository itemRepository;
 
-    public ItemController(){
-
-    }
     public ItemController(ItemService service, UserService userService,ItemRepository itemRepository) {
         this.service = service;
         this.userService=userService;

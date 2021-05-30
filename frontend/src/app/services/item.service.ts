@@ -32,7 +32,14 @@ export class ItemService {
   }
 
   getUserItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(REST_API + '/useritems')
+    return this.http.get<Item[]>(REST_API + '/showuseritems')
   }
 
+  deleteItem(item: Item) {
+    return this.http.get(REST_API + `/deleteitem/${item.id}`);
+  }
+
+  getSearchedItems(searchedBy: string): Observable<Item[]> {
+    return this.http.get<Item[]>(REST_API + '/items', { params: { search: searchedBy } })
+  }
 }

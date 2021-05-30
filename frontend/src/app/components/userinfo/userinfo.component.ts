@@ -13,7 +13,6 @@ import {User} from "../../models/user";
 })
 export class UserinfoComponent implements OnInit {
 
-  item?: Item;
   user?: User;
 
 
@@ -23,15 +22,16 @@ export class UserinfoComponent implements OnInit {
     private userService: UserService) { }
 
   ngOnInit(): void {
-  /*this.getUserInfo();*/
+    this.getUserInfo();
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  /*getUserInfo(): void{
+  getUserInfo(): void{
     this.userService.getUserInfo()
-      .subscribe(users => this.users = users);
-  }*/
+      .subscribe(users => this.user = users);
+  }
+
 }

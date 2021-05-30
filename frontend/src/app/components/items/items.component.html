@@ -7,6 +7,15 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="search">
+<form class="topnav" (ngSubmit)="searchItem(search.value)">
+  <input type="text" #search>
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+
 <hr>
 <div class="items">
     <div *ngFor="let item of items" routerLink="/detail/{{item.id}}" class="buble">

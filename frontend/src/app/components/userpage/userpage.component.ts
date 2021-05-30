@@ -28,4 +28,12 @@ export class UserpageComponent implements OnInit {
   Submit():void {
     this.AuthService.logout()
   }
+
+  Delete(item: Item): void {
+    if (window.confirm("Naozaj chcete odtrániť inzerát")) {
+      this.items = this.items.filter(h => h !== item);
+      this.itemService.deleteItem(item).subscribe();
+    }
+
+  }
 }
