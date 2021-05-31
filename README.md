@@ -2,9 +2,9 @@
 
 Stránka na štýl bazošu, letgo ... kde ľudia budú môcť pridávať rôzne inzeráty a priraďovať ich ku svojim kontám.
 
-Must have: pridanie inzeratu, odstránenie inzerátu, kategorie, popis, nazov, fotka, cena, adresa, login
+Must have: pridanie inzeratu, odstránenie inzerátu, popis, nazov, fotka, cena, adresa, login
 
-Nice to have: sorting, vyhladavanie, tagy...
+Nice to have: sorting, kategorie, vyhladavanie, tagy...
 
 Názov: trade.co
 
