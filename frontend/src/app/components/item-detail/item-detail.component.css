@@ -23,7 +23,11 @@
   padding-left: 5%;
 }
 .description{
-  padding-left: 2%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
 }
 .textPrice{
   font-weight: bold;
@@ -32,6 +36,8 @@
 }
 .price{
   padding-left: 2%;
+  color: red;
+  font-weight: bold;
 }
 .contact{
   padding-top: 3%;
